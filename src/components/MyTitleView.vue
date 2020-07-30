@@ -1,11 +1,13 @@
 <template>
   <div class="title-view">
     <div class="title-view-top">
-      <img :src="leftIcon?leftIcon:defaultSrc" />
+      <img :src="leftIcon?leftIcon:defaultSrc" @click="$router.back(-1)" v-show="showLeftIcon" />
       <p>{{title}}</p>
-      <img :src="rightIcon" />
+      <img :src="rightIcon" v-show="showRightIcon" />
     </div>
-    <hr v-if="showLine" />
+    <div class="div-hr" v-show="showLine">
+      <hr />
+    </div>
   </div>
 </template>
 
@@ -16,7 +18,18 @@ export default {
     leftIcon: String,
     title: String,
     rightIcon: String,
-    showLine: Boolean,
+    showLine: {
+      type: Boolean,
+      default: true,
+    },
+    showLeftIcon: {
+      type: Boolean,
+      default: true,
+    },
+    showRightIcon: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -47,10 +60,12 @@ export default {
       align-self: center;
     }
   }
-  hr {
-    width: 100%;
-    background: #999999;
-    transform: scaleY(0.2);
+  .div-hr {
+    hr {
+      width: 100%;
+      background: #999999;
+      transform: scaleY(0.2);
+    }
   }
 }
 </style>

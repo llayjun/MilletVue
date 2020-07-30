@@ -1,6 +1,6 @@
 <template>
   <div id="login">
-    <my-title title="登录" showLine="true" />
+    <my-title title="登录" :showLine="false" :showLeftIcon="false" />
     <div class="space-div" />
     <img src="../assets/common/ic_login_logo.png" />
     <div class="space-div-top" />
@@ -8,7 +8,7 @@
     <div class="space-div" />
     <input v-model="passWord" placeholder="请输入密码" />
     <div class="space-div-button" />
-    <div class="div-submit">
+    <div class="div-submit" @click="login">
       <img src="../assets/common/ic_login_bg.png" />
       <span>登录</span>
     </div>
@@ -29,6 +29,12 @@ export default {
       passWord: "",
     };
   },
+  methods: {
+    login() {
+      console.log('跳转到主页')
+      this.$router.push({ path:'/main'})
+    }
+  }
 };
 </script>
 
