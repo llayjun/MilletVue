@@ -4,7 +4,7 @@ import router from './router'
 import store from './store/index'
 import global from './config/global_variable.js'
 import utils from './utils/mutils.js'
-import Api from './config/api.js'
+import Api from './service/api/api.js'
 import './theme/_theme_all.scss'
 import VueRouterCache from 'vue-router-cache'
 import './config/vant' //按需引入组件
