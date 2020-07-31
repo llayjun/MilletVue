@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition :name="transitionName" :mode="transitionMode" :duration="transitionDuration">
+      <router-cache>
+        <router-view class="router-view"></router-view>
+      </router-cache>
+    </transition>
   </div>
 </template>
 
 <script>
+import routerTransitionMixins from "./utils/router-transition.js";
 export default {
   name: "App",
+  mixins: [routerTransitionMixins],
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

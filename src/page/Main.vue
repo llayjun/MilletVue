@@ -1,6 +1,7 @@
 <template>
   <div id="main">
     <my-title title="主页" :showLine="true" />
+    <van-button type="primary">默认按钮</van-button>
   </div>
 </template>
 
@@ -13,7 +14,9 @@ export default {
     myTitle,
   },
   data() {
-    return {};
+    return {
+      
+    };
   },
 };
 </script>
