@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <my-title title="主页" :showLine="true" />
+    <my-title title="主页1" :showLine="true" />
     <van-button type="primary" @click="getDetail">{{msg}}</van-button>
   </div>
 </template>
